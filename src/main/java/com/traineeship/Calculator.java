@@ -5,25 +5,25 @@ import java.util.Scanner;
 public class Calculator {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            Double num1 = readNumber(scanner, "Введите первое число (или exit): ");
-            if (num1 == null) break;
+        try (Scanner scanner = new Scanner(System.in)) {
+            while (true) {
+                Double num1 = readNumber(scanner, "Введите первое число (или exit): ");
+                if (num1 == null) break;
 
-            String operation = readOperation(scanner);
-            if (operation == null) break;
+                String operation = readOperation(scanner);
+                if (operation == null) break;
 
-            Double num2 = readNumber(scanner, "Введите второе число: ");
-            if (num2 == null) break;
+                Double num2 = readNumber(scanner, "Введите второе число: ");
+                if (num2 == null) break;
 
-            calculate(num1, num2, operation);
+                calculate(num1, num2, operation);
+            }
         }
-        scanner.close();
     }
 
     private static Double readNumber(Scanner scanner, String message) {
+        System.out.print(message);
         while (true) {
-            System.out.print(message);
             String input = scanner.nextLine().trim();
             if ("exit".equalsIgnoreCase(input)) return null;
             try {
