@@ -29,9 +29,6 @@ public class ArraySearchTask {
     }
 
     private static int findMaxValue(int[] array) {
-        if (array == null || array.length == 0) {
-            throw new IllegalArgumentException("Массив пуст");
-        }
         int result = array[0];
         for (int i : array) {
             if (i > result) result = i;
@@ -40,9 +37,6 @@ public class ArraySearchTask {
     }
 
     private static int findElementIndex(int[] array, int target) {
-        if (array == null || array.length == 0) {
-            throw new IllegalArgumentException("Массив пуст");
-        }
         for (int i = 0; i < array.length; i++) {
             if (array[i] == target) return i;
 
