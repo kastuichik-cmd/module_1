@@ -1,17 +1,32 @@
 package com.traineeship;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+       byte b = Byte.MAX_VALUE;
+       short s = Short.MAX_VALUE;
+       int i = Integer.MAX_VALUE;
+       long l = Long.MAX_VALUE;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+       float f = Float.MAX_VALUE;
+       double d = Double.MAX_VALUE;
+
+       boolean bool = true;
+       char ch = 'a';
+
+       String str = "TechCore";
+
+       System.out.println("byte: " + b + ", size: " + Byte.BYTES + " bytes");
+       System.out.println("short: " + s + ", size: " + Short.BYTES + " bytes");
+       System.out.println("int: " + i + ", size: " + Integer.BYTES + " bytes");
+       System.out.println("long: " + l + ", size: " + Long.BYTES + " bytes");
+
+       System.out.println("float: " + f + ", size: " + Float.BYTES + " bytes");
+       System.out.println("double: " + d + ", size: " + Double.BYTES + " bytes");
+
+       System.out.println("char: " + ch + ", size: " + Character.BYTES + " bytes");
+       System.out.println("boolean: " + bool + ", size: нет фиксированного размера в Java");
+
+       System.out.println(str);
     }
 }
