@@ -10,13 +10,13 @@ public class StudentMain {
                 new Student("Маша", 29, 8.2),
                 new Student("Света", 27, 6.8));
 
-        double maxAverageGrade = students.stream()
+        double highestAverageGrade = students.stream()
                 .mapToDouble(Student::getAverageGrade)
                 .max()
                 .orElseThrow();
 
         students.stream()
-                .filter(student -> student.getAverageGrade() == maxAverageGrade)
+                .filter(student -> student.getAverageGrade() == highestAverageGrade)
                 .forEach(student -> System.out.println("Cтудент с наивысшим средним баллом: " + student));
     }
 }
