@@ -48,19 +48,35 @@ public class CalculatorTask {
     }
 
     private static void calculate(double a, double b, String operation) {
+        double result;
         switch (operation) {
-            case "+" -> System.out.println(a + b);
-            case "-" -> System.out.println(a - b);
-            case "*" -> System.out.println(a * b);
-            case "/" -> {
-                if (b == 0) {
-                    System.out.println("Ошибка: деление на ноль");
-                } else {
-                    System.out.println(a / b);
-                }
-            }
+            case "+" -> result = add(a, b);
+            case "-" -> result = subtract(a, b);
+            case "*" -> result = multiply(a, b);
+            case "/" -> result = divide(a, b);
             default -> throw new IllegalStateException("Неизвестная операция: " + operation);
         }
+        System.out.println(result);
+    }
+
+    public static double add(double a, double b) {
+        return a + b;
+    }
+
+    public static double subtract(double a, double b) {
+        return a - b;
+    }
+
+    public static double multiply(double a, double b) {
+        return a * b;
+    }
+
+    public static double divide(double a, double b) {
+        if (b == 0) {
+            System.out.println("Ошибка: деление на ноль");
+            return 0;
+        }
+        return a / b;
     }
 }
 
